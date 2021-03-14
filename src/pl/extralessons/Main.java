@@ -6,15 +6,31 @@ public class Main {
 
     public static void main(String[] args) {
 
+
         liczbyNarcystyczne(7);
         liczbyPierwsze(7);
 
         int liczba = 1221;
+
         if(czyJestPalindromem(liczba))
             System.out.println("\nLiczba "+liczba+" jest polindromem." );
         else
             System.out.println("\nLiczba "+liczba+" nie jest polindromem." );
+
+        System.out.println("Suma cyfr liczby " + liczba + " wynosi: " + sumaCyfrLiczby(liczba));
     }
+    //Metoda sumuje cyfry danej liczby
+    public static int sumaCyfrLiczby(int liczba){
+        int temp = liczba;
+        int iloscCyfr = ileCyfrMaLiczba(liczba);
+        int suma = 0;
+        for (int i = 0; i < iloscCyfr; i++) {
+            suma += temp%10;
+            temp/=10;
+        }
+        return suma;
+    }
+
     //Metoda sprawdza czy dana liczba jest palindromem
     public static boolean czyJestPalindromem(int liczba){
         int iloscCyfr = ileCyfrMaLiczba(liczba);
