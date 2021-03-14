@@ -6,8 +6,29 @@ public class Main {
 
     public static void main(String[] args) {
 
-        liczbyPierwsze(7);
         liczbyNarcystyczne(7);
+        liczbyPierwsze(7);
+
+        int liczba = 1221;
+        if(czyJestPalindromem(liczba))
+            System.out.println("\nLiczba "+liczba+" jest polindromem." );
+        else
+            System.out.println("\nLiczba "+liczba+" nie jest polindromem." );
+    }
+    //Metoda sprawdza czy dana liczba jest palindromem
+    public static boolean czyJestPalindromem(int liczba){
+        int iloscCyfr = ileCyfrMaLiczba(liczba);
+        int[] tab = new int[iloscCyfr];
+        int temp = liczba;
+        for (int i = 0; i < iloscCyfr; i++) {
+            tab[i] = temp%10;
+            temp/=10;
+        }
+        for (int i = 0; i < tab.length/2; i++) {
+            if(tab[i] != tab[tab.length -1 - i])
+                return false;
+        }
+        return true;
     }
     //Metoda sprawdza ile cyfr ma liczba
     public static int ileCyfrMaLiczba(int liczba){
@@ -42,7 +63,7 @@ public class Main {
 
     //Metoda wyświetlająca podaną ilość liczb pierwszych
     public static void liczbyPierwsze(int iloscLiczb){
-        System.out.println("Liczby pierwsze:");
+        System.out.println("\nLiczby pierwsze:");
         int liczbaSprawdzana = 1;
         int liczbaLiczbPierwszych = 0;
         while(liczbaLiczbPierwszych < iloscLiczb ){
@@ -57,6 +78,7 @@ public class Main {
             }
             liczbaSprawdzana++;
         }
+
     }
 }
 
