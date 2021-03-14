@@ -1,16 +1,21 @@
 package pl.extralessons;
 
+import java.util.Scanner;
+
 import static java.lang.Math.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
+        int liczba = 11;
 
-        liczbyNarcystyczne(7);
-        liczbyPierwsze(7);
+        if(czyJestDoskonala(liczba))
+            System.out.println("\nLiczba "+liczba+" jest doskonała." );
+        else
+            System.out.println("\nLiczba "+liczba+" nie jest doskonała." );
 
-        int liczba = 1221;
+        System.out.println("Suma cyfr liczby " + liczba + " wynosi: " + sumaCyfrLiczby(liczba));
 
         if(czyJestPalindromem(liczba))
             System.out.println("\nLiczba "+liczba+" jest polindromem." );
@@ -18,7 +23,21 @@ public class Main {
             System.out.println("\nLiczba "+liczba+" nie jest polindromem." );
 
         System.out.println("Suma cyfr liczby " + liczba + " wynosi: " + sumaCyfrLiczby(liczba));
+
+        liczbyNarcystyczne(7);
+        liczbyPierwsze(7);
+
     }
+    //Metoda sprawdza czy liczba jest doskonała
+    public static boolean czyJestDoskonala (int liczba) {
+        int suma = 0;
+        for (int i = 1; i < liczba; i++) {
+            if (liczba%i == 0)
+                suma += i;
+        }
+        return suma == liczba;
+    }
+
     //Metoda sumuje cyfry danej liczby
     public static int sumaCyfrLiczby(int liczba){
         int temp = liczba;
