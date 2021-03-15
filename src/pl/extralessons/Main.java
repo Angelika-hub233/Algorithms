@@ -1,7 +1,5 @@
 package pl.extralessons;
 
-import java.util.Scanner;
-
 import static java.lang.Math.*;
 
 public class Main {
