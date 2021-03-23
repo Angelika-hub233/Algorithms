@@ -5,7 +5,7 @@ public class ConvertToDecimal {
 
         int binaryNumber = 101011110;
         System.out.println(convertBinaryToDecimal(binaryNumber));
-        int octalNumber = 17;
+        int octalNumber = 10;
         System.out.println(convertOctalToDecimal(octalNumber));
     }
 
